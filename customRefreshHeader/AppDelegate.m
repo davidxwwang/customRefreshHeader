@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "EMTableVC.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    EMTableVC *listViewController = [[EMTableVC alloc] initWithStyle:UITableViewStylePlain];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
+    self.window.rootViewController = navigationController;
+    
+    [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 
